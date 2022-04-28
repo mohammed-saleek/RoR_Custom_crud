@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Posts</title>
+</head>
+<body>
+	<center><h4>Post Listings</h4></center>
+	<%= link_to 'Homepage', root_path %><br>
+	<%= link_to 'Create Post', posts_new_post_path %>
+	<br><br><br>
+
+	<% @posts.each do |post| %>
+	<tr>
+		<td>Title : <%= post.title %></td><br>
+		<td>Description : <%= post.description %></td><br>
+		<td><%= link_to 'Show Post', show_post_path(post) %>
+			<%= link_to 'Update Post', edit_post_path(post) %>
+			<%= link_to 'Delete Post', delete_post_path(post), method: :delete, data: {confirm: 'Are You Sure?'} %>
+		</td>
+	</tr>
+	<p>****************************************************</p>
+	<% end %>
+</body>
+</html>

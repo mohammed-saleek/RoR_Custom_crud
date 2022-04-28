@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post</title>
+</head>
+<body>
+	<center>
+		<h2>Your Post</h2>
+		<h4><%= @post.title %></h4>
+		<p>
+			Title: <%= @post.title %><br>
+		</p>
+		<p>
+			Description: <%= @post.description %><br>
+		</p>
+		<p>
+			<%= link_to 'Back', posts_path %>
+			<%= link_to 'Edit', edit_post_path %>
+		</p>
+	</center>
+
+</body>
+</html>
